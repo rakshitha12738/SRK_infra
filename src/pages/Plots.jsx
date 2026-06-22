@@ -77,6 +77,7 @@ function Plots() {
 
       if (dbError) {
         console.error("Database Save Error Details:", dbError);
+        alert("Form Save Error: " + dbError.message);
       }
 
       // --- EMAIL DISPATCH ---
@@ -131,7 +132,7 @@ function Plots() {
         {/* HERO IMAGE */}
         <section>
           <img
-            src="/images/hero2.jpg"
+            src="/images/hero3.jpg"
             alt="Plots Development"
             className="w-full h-[500px] object-cover"
           />

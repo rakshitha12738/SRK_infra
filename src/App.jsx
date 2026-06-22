@@ -10,6 +10,8 @@ import Contact from "./pages/Contact";
 import Villas from "./pages/Villas";
 import Plots from "./pages/Plots";
 import Apartments from "./pages/Apartments";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/villas" element={<Villas />} />
         <Route path="/plots" element={<Plots />} />
         <Route path="/apartments" element={<Apartments />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
   );

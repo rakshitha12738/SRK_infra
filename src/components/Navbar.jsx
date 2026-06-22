@@ -18,9 +18,11 @@ function Navbar() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
 
+            {/* PROJECTS DROPDOWN - Handles enter and leave cleanly */}
             <li
-              className="group relative cursor-pointer"
+              className="group relative cursor-pointer py-2"
               onMouseEnter={() => setOpen(true)}
+              onMouseLeave={() => setOpen(false)}
             >
               <button
                 type="button"
@@ -30,47 +32,57 @@ function Navbar() {
                 onClick={() => setOpen((current) => !current)}
               >
                 <span>PROJECTS</span>
-                <span className="text-[10px] leading-none">▼</span>
+                <span className="text-[10px] leading-none transition-transform duration-200 group-hover:rotate-180">▼</span>
               </button>
+              
               {open && (
-  <ul className="absolute left-0 mt-3 w-44 overflow-hidden rounded-xl border border-gray-100 bg-white shadow-lg">
-    <li>
-      <Link
-        to="/villas"
-        className="block px-6 py-4 text-left text-[14px] font-semibold uppercase tracking-wide text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:underline hover:text-blue-600"
-        onClick={() => setOpen(false)}
-      >
-        Villas
-      </Link>
-    </li>
+                <ul className="absolute left-0 mt-2 w-44 overflow-hidden rounded-xl border border-gray-100 bg-white shadow-lg">
+                  <li>
+                    <Link
+                      to="/villas"
+                      className="block px-6 py-4 text-left text-[14px] font-semibold uppercase tracking-wide text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      Villas
+                    </Link>
+                  </li>
 
-    <li>
-      <Link
-        to="/plots"
-        className="block px-6 py-4 text-left text-[14px] font-semibold uppercase tracking-wide text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:underline hover:text-blue-600"
-        onClick={() => setOpen(false)}
-      >
-        Plots
-      </Link>
-    </li>
+                  <li>
+                    <Link
+                      to="/plots"
+                      className="block px-6 py-4 text-left text-[14px] font-semibold uppercase tracking-wide text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      Plots
+                    </Link>
+                  </li>
 
-    <li>
-      <Link
-        to="/apartments"
-        className="block px-6 py-4 text-left text-[14px] font-semibold uppercase tracking-wide text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:underline hover:text-blue-600"
-        onClick={() => setOpen(false)}
-      >
-        Apartments
-      </Link>
-    </li>
-  </ul>
-)}
-                  
+                  <li>
+                    <Link
+                      to="/apartments"
+                      className="block px-6 py-4 text-left text-[14px] font-semibold uppercase tracking-wide text-gray-700 transition-all duration-200 hover:bg-blue-50 hover:text-blue-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      Apartments
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
 
             <li><Link to="/blog">Blog</Link></li>
             <li><Link to="/careers">Careers</Link></li>
             <li><Link to="/contact">Contact</Link></li>
+            
+            {/* ADMIN PORTAL ACTION BUTTON */}
+            <li>
+              <Link 
+                to="/admin" 
+                className="ml-2 bg-[#34489b] hover:bg-[#233373] text-white font-semibold text-[13px] px-4 py-2.5 rounded-lg transition-colors duration-200 shadow-xs"
+              >
+                Admin
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

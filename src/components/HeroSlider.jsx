@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// FIXED: Removed the invalid "react-serif" import completely
+import { FaArrowLeft as ArrowLeftIcon, FaArrowRight as ArrowRightIcon } from "react-icons/fa";
 
 function HeroSlider() {
   const slides = [
@@ -16,14 +17,14 @@ function HeroSlider() {
       title: "Luxury Villas",
       subtitle: "Vibrance Meets Sophistication",
       buttonLabel: "Villas",
-      buttonTo: "/projects/villas",
+      buttonTo: "/villas",
     },
     {
       image: "/images/hero3.jpg",
       title: "SRK Sri Balaji Open Plots",
       subtitle: "Approved layouts with reliable infrastructure",
       buttonLabel: "Plots",
-      buttonTo: "/projects/plots",
+      buttonTo: "/plots",
     },
   ];
 
@@ -55,10 +56,7 @@ function HeroSlider() {
   };
 
   const handlePointerMove = (event) => {
-    if (dragStartX.current === null) {
-      return;
-    }
-
+    if (dragStartX.current === null) return;
     dragEndX.current = event.clientX;
   };
 
@@ -70,7 +68,6 @@ function HeroSlider() {
     }
 
     const distance = dragEndX.current - dragStartX.current;
-
     if (Math.abs(distance) > 40) {
       if (distance < 0) {
         nextSlide();
@@ -78,7 +75,6 @@ function HeroSlider() {
         prevSlide();
       }
     }
-
     dragStartX.current = null;
     dragEndX.current = null;
   };
@@ -138,20 +134,20 @@ function HeroSlider() {
           </div>
         </div>
 
-        {/* Left Arrow */}
+        {/* Left Arrow Button */}
         <button
           onClick={prevSlide}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 flex items-center justify-center"
         >
-          <FaArrowLeft className="text-blue-900" />
+          <ArrowLeftIcon className="text-blue-900" />
         </button>
 
-        {/* Right Arrow */}
+        {/* Right Arrow Button */}
         <button
           onClick={nextSlide}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 flex items-center justify-center"
         >
-          <FaArrowRight className="text-blue-900" />
+          <ArrowRightIcon className="text-blue-900" />
         </button>
       </div>
     </section>
