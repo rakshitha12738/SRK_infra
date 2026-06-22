@@ -94,11 +94,9 @@ The system switches between sections seamlessly using these exact structural pat
 /careers
 /contact
 
-🛠️ Troubleshooting & Common Fixes
-Missing package.json Errors: Double-check that your terminal directory path is explicitly pointing inside the srk_infra_2 root directory block before trying to run installation loops.
+🛠️ Troubleshooting & Common Fixes:
 
-Vite Missing Module Exports: If icon bundles or submodules fail to compile correctly, verify that you are explicitly pulling from supported, bundled icon subsets (such as react-icons/md or react-icons/fa).
-
-ESLint Unused Imports: If code checkers warn about unused structures, either attach them inside your active routes layout or drop the unused statement entirely.
-
-Stop Server Connection: To completely shut down the active terminal dev environment running your project interface, type CTRL + C inside your terminal window.
+-> Missing package.json Errors: Double-check that your terminal directory path is explicitly pointing inside the srk_infra_2 root directory block before trying to run installation loops.
+-> Vite Missing Module Exports: If icon bundles or submodules fail to compile correctly, verify that you are explicitly pulling from supported, bundled icon subsets (such as react-icons/md or react-icons/fa).
+-> ESLint Unused Imports: If code checkers warn about unused structures, either attach them inside your active routes layout or drop the unused statement entirely.
+-> Stop Server Connection: To completely shut down the active terminal dev environment running your project interface, type CTRL + C inside your terminal window.
